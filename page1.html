@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS</title>
+    <script src="node_modules\angular\angular.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body  ng-app="myModule" >
+    <div ng-controller="myController">
+        <!-- <div>
+            First Name:{{ employee.firstName }}
+        </div>
+        <div>
+            Last Name:{{ employee.lastName }}
+        </div>
+        <div>
+            Gender:{{ employee.gender }}
+        </div> -->
+        <!-- source binding  -->
+        <!-- <img ng-src="{{country.flag}}" alt="{{ country.name + ' Flag' }}" width=200 height=100 >
+        <div>Name:{{country.name}}</div>
+        <div>Name:{{country.capital}}</div> -->
+
+        <!-- two way data binding -->
+        <!-- if model not present it is created -->
+        <!-- <div><input type="text" ng-model="greeting"></div>
+        <div>{{message}}</div> -->
+
+        <!-- model created  -->
+        <!-- <div>{{greeting}}</div> -->
+        <!-- <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="e in employees">
+                    <td>{{e.firstName}}</td>
+                    <td>{{e.lastName}}</td>
+                    <td>{{e.gender}}</td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <!-- <ul>
+            <li ng-repeat="country in countries" ng-init="parentIndex=$index">
+                {{country.name}}-Index={{$index}}
+                 <ul>
+                    <li ng-repeat="city in country.cities">
+                        {{city}}=Parent Index={{parentIndex}}-Index={{$index}}
+                    </li>
+                
+                 </ul>
+            </li>
+        </ul> -->
+
+        <!-- Event handling -->
+        <!-- <table border="1">
+            <thead>
+                <tr>
+                    <th>Language</th>
+                    <th>Likes</th>
+                    <th>Dislikes</th>
+                    <th>Date</th>
+                    <th>Like/Dislike</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="p in programming">
+                    <td>{{p.name}}</td>
+                    <td>{{p.likes}}</td>
+                    <td>{{p.dislikes}}</td>
+                    <td>{{}}</td>
+                    <td>
+                       
+                        <button ng-click="incrementLike(p)">Like</button>
+                        <button ng-click="incrementDislike(p)">Dislike</button>
+                    
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <table style="border: 1px solid black; border-collapse: collapse;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>gender</th>
+                    <th>Salary</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat=" e in employees">
+                    <td>{{e.name}}</td>
+                    <td>{{e.dob}}</td>
+                    <td>{{e.gender}}</td>
+                    <td>{{e.salary}}</td>
+                    <td>{{e.salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    
+
+
+    <!-- <div ng-app="imgModule">
+        <div ng-controller="imgController"></div>
+        {{message}}
+        10 + 20 ={{ 10 + 20}}
+    </div> -->
+    <!-- <div>
+        30 + 40 ={{30 + 40}}
+    </div>
+    <div>
+        {{1==3}}
+    </div>
+    <div>
+        {{ {name:'shailesh',id:'93'}.name }}
+    </div>
+    <div>{{['Aman','Naman'][0]}}</div> -->
+    
+</body>
+</html>
