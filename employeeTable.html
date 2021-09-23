@@ -1,0 +1,30 @@
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th ng-click="sortData('name')"> <span class="pe-">Name</span><span class="fa" ng-class="getSortClass('name')" aria-hidden="true"></span></th>
+            <th ng-click="sortData('dob')"> <span class="pe-none">Date of Birth</span> <span class="fa" ng-class="getSortClass('dob')" aria-hidden="true"></span></th>
+            <th>gender</th>
+            <th ng-click="sortData('city')"> <span class="pe-none">City</span> <span class="fa" ng-class="getSortClass('city')" aria-hidden="true"></span></th>
+            <th ng-hide="salaryState" ng-click="sortData('salary')"> <span class="pe-none">Salary</span><span class="fa" ng-class="getSortClass('salary')" aria-hidden="true"></span></th>
+            <!-- <th>Salary</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr ng-repeat=" e in employees| orderBy:sortColumn | limitTo:rowLimit">
+            <td>{{e.name | uppercase}}</td>
+            <td>{{e.dob | date:"dd-MM-yyyy"}}</td>
+            <td>{{e.gender | lowercase}}</td>
+            <td>{{e.salary | number:0}}</td>
+            <td>{{e.salary | currency:"₹":0}}</td>
+        </tr> -->
+
+        <tr ng-repeat=" e in employees | filter:search | orderBy:sortColumn:reverseSort">
+            <td>{{e.name | uppercase}}</td>
+            <td>{{e.dob | date:"dd-MM-yyyy"}}</td>
+            <td>{{e.gender | gender |lowercase}}</td>
+            <td>{{e.city | uppercase}}</td>
+            <td ng-hide="salaryState">{{e.salary | number:0}}</td>
+            <!-- <td>{{e.salary | currency:"₹":0}}</td> -->
+        </tr>
+    </tbody>
+</table>

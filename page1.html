@@ -7,7 +7,9 @@
     <title>AngularJS</title>
     <script src="node_modules\angular\angular.js"></script>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="filter.js"></script>
 </head>
 <body  ng-app="myModule" >
     <div ng-controller="myController">
@@ -87,27 +89,27 @@
                 </tr>
             </tbody>
         </table> -->
+        <!-- Rows to display:<input type="number" step="1" min="0" max="5" ng-model="rowLimit">
+        Sort By: <select ng-model="sortColumn">
+                    <option value="+name">Name ASC</option>
+                    <option value="-name">Name DESC</option>
+                    <option value="+dob">Date of Birth ASC</option>
+                    <option value="-dob">Date of Birth DESC</option>
+                    <option value="+salary">Salary ASC</option>
+                    <option value="-salary">Salary DESC</option>
 
-        <table style="border: 1px solid black; border-collapse: collapse;">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Date of Birth</th>
-                    <th>gender</th>
-                    <th>Salary</th>
-                    <th>Salary</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat=" e in employees">
-                    <td>{{e.name}}</td>
-                    <td>{{e.dob}}</td>
-                    <td>{{e.gender}}</td>
-                    <td>{{e.salary}}</td>
-                    <td>{{e.salary}}</td>
-                </tr>
-            </tbody>
-        </table>
+
+                </select> -->
+                <!-- <input type="text" ng-model="searchText" placeholder="search employees name & place">
+                <input type="checkbox" ng-model="salaryState">Hide Salary -->
+                <!-- <input type="text" ng-model="searchText.city" placeholder="search city">
+                <input type="checkbox" ng-model="exactMatch">Exact Match -->
+                <select ng-model="displayType">
+                    <option value="table">Table</option>
+                    <option value="list">List</option>
+                </select>
+                <div ng-include="employeesView()"></div>
+        
 
 
     </div>

@@ -51,14 +51,66 @@ var myApp= angular
 
             //filters
             var employees=[
-                {name:"Ben",dob:new Date('23 March 1998'),gender:'Male',salary:50000.98},
-                {name:"Lee",dob:new Date('22 February 1994'),gender:'Male',salary:150000.90},
-                {name:"Tom",dob:new Date('12 March 1996'),gender:'Female',salary:540000.68},
-                {name:"Dick",dob:new Date('31 August 1998'),gender:'Male',salary:150000.198},
-                {name:"Harry",dob:new Date('29 February 1992'),gender:'Female',salary:250080.98}
+                {name:"Ben",dob:new Date('23 March 1998'),gender:1,city:'Mumbai',salary:50000.918},
+                {name:"Lee",dob:new Date('22 February 1994'),gender:1,city:'Kolkata',salary:150000.90},
+                {name:"Tom",dob:new Date('12 March 1996'),gender:2,city:'Ranchi',salary:540000.618},
+                {name:"Dick",dob:new Date('31 August 1998'),gender:3,city:'Ranchi',salary:150000.198},
+                {name:"Harry",dob:new Date('29 February 1992'),gender:2,city:'Chandigarh',salary:250080.98}
             ];
 
             $scope.employees=employees;
+            $scope.displayType="table";
+            $scope.employeesView= function()
+            {
+                if($scope.displayType=="table")
+                {
+                    return 'employeeTable.html'
+                }else{
+                    return 'employeeList.html';
+                }
+            }
+            $scope.salaryState=true;
+            $scope.search=function (item) {
+                if($scope.searchText==undefined)
+                {
+                    return true;
+                }else{
+                   
+                    if(item.name.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 || item.city.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1  )
+                    {
+                        //console.log(item);
+                        return true;
+                        
+                    }
+
+                    return false;
+                }
+                
+            }
+            //$scope.rowLimit=3;
+            $scope.sortColumn="name";
+            $scope.reverseSort=false;
+
+            $scope.sortData=function(column) {
+
+                if($scope.sortColumn==column)
+                    $scope.reverseSort=!$scope.reverseSort;
+                else
+                    $scope.reverseSort=false;
+                
+                $scope.sortColumn=column;
+                   
+            }
+
+            $scope.getSortClass=function(column) {
+                if($scope.sortColumn==column)
+                    if($scope.reverseSort)
+                        return 'fa-arrow-up';
+                    else
+                        return 'fa-arrow-down';
+
+                return ''; 
+            }
                 
             });
 
