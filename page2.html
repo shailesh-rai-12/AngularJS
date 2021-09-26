@@ -13,7 +13,30 @@
 <body>
     
     <div ng-app="moduleApp">
-        <div ng-controller="firstController"></div>
+        <div ng-controller="firstController">
+                    <table class="table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Date Of Birth</th>
+                                <th>City</th>
+                                <th>Country</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="employee in employees">
+                                <td>{{employee.name}}</td>
+                                <td>{{employee.department}}</td>
+                                <td>{{employee.dateOfBirth | date:"dd-mm-yyyy"}}</td>
+                                <td>{{employee.city}}</td>
+                                <td>{{employee.country}}</td>
+                                <!-- <td>{{employee}}</td> -->
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 
     </div>
 </body>

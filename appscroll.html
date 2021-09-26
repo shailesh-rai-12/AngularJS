@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appscroll</title>
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <script src="node_modules\angular\angular.js"></script>
+    <script src="appscroll.js"></script>
+</head>
+<body class="h-100" ng-app="myApp" ng-controller="appController">
+    <button id="top" ng-click="scrollTo('bottom')">to bottom</button>
+    <div class="container bg-danger w-25 h-100 m-0 p-0">
+
+    </div>
+    <button id="bottom" ng-click="scrollTo('top')">to top</button>
+</body>
+</html>
