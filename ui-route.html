@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI-ROUTING</title>
+    <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css">
+    <script src="node_modules\angular\angular.js"></script>
+    <!-- <script src="node_modules\angular\angular-route.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.29/angular-ui-router.min.js" integrity="sha512-pqaTGP67/KI6BZh2w8MfiBDyn4CtkDMiSZrqtiV7KAcCWwnncwvUM3UDCecIAJH6BDL8/py0N1ka3rMI5+7+rg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="ui-route.js"></script>
+</head>
+<body class="h-100">
+       <div class="container-fluid bg-danger h-100" ng-app="uiApp">
+           <div class="row justify-content-center align-items-center h-25">
+               <h1 class="col-4 ">Website Header</h1>
+           </div>
+           <div class="row h-100">
+               <div class="col-md-12 col-lg-2  bg-light">
+                   <div class="row">
+                    <a  href="#!/home">Home</a>
+                    <a href="#!/courses">Courses</a>
+                    <a href="#!?students">Students</a>
+                   </div>
+                   
+               </div>
+               <div class="col-md-12 col-lg-10 h-100 bg-success">
+                   <div class="row bg-warning h-100">
+                            <div ui-view></div>
+                   </div>
+               </div>
+           </div>
+
+       </div>
+    
+</body>
+</html>
