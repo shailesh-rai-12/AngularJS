@@ -2,8 +2,8 @@
 <div>
     <div><input type="text" ng-model="search" placeholder="search names"></div>
     <ul>
-        <li ng-repeat="student in studentCtrl.students | filter:search | limitTo:10">
-           <a href="#!/student/{{student._id}}"> {{student.name}}</a>
+        <li ng-repeat="student in studentCtrl.students | filter:search">
+           <a ui-sref="studentDetail({id:student._id})"> {{student.name}}</a>
         </li>
     </ul>
 </div>
